@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="a3_6">
+<head>
+<title>$watch</title>
+<script src="../js/angular.js" type="text/javascript"></script>
+<style type="text/css">
+body{
+	font-size: 12px;
+}
+
+div{
+	margin: 8px 0px;
+}
+</style>
+</head>
+<body>
+	<div ng-controller="c3_6">
+		<div>
+			<input type="text" ng-model="name" placeholder="Please enter your name..." />
+		</div>
+		<div>
+			Accumulation of name changed: {{count}}
+		</div>
+	</div>
+	<script type="text/javascript">
+		var a3_6 = angular.module('a3_6', []);
+		a3_6.controller('c3_6', function($scope) {
+			$scope.count = 0;
+			$scope.name = "";
+			$scope.$watch('name', function(){
+				$scope.count++;
+			});
+		});
+	</script>
+</body>
+</html>
