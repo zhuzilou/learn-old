@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <!-- sessionFactory -->
+    <session-factory>
+        <!-- Info of DB -->
+        <property name="connection.password">master</property>
+        <property name="connection.username">root</property>
+        <property name="hibernate.connection.driver_class">
+            com.mysql.jdbc.Driver
+        </property>
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/ssh2Demo
+        </property>
+        <property name="dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+        <!-- show sql in console -->
+        <property name="show_sql">true</property>
+        <!-- validate: default value. Check table structure by persistent class. -->
+        <!-- update: Check table structure by persistent class. Create table if it not exists, update table if it exists. -->
+        <!-- create-drop: Check table structure by persistent class. Create table whether the table exists, drop table when hibernate destroy -->
+        <property name="hbm2ddl.auto">update</property>
+        <property name="format_sql">true</property>
+        <!-- mapping file of persistent class -->
+        <mapping resource="hibernate/mapping/Person.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>
