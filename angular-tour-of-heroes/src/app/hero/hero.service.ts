@@ -10,6 +10,7 @@ export class HeroService {
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
   constructor(private http: Http) { }
+
   getHeroes(): Promise<Hero[]> {
     return this.http.get(this.heroesUrl)
       .toPromise()
