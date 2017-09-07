@@ -5,8 +5,9 @@ import {HeroService} from "./hero.service";
 @Component({
     selector: 'hero-list',
     template: `
-    <div *ngFor="let hero of heros">
+    <div *ngFor="let hero of heroes">
         {{hero.id}} - {{hero.name}}
+        ({{hero.isSecret ? 'secret' : 'public'}})
     </div>`
 })
 export class HeroListComponent {
