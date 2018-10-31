@@ -10,7 +10,7 @@
 
 	<properties>
 		<struts.version>2.3.35</struts.version>
-		<spring.version>4.3.16.RELEASE</spring.version>
+		<spring.version>4.3.18.RELEASE</spring.version>
 	</properties>
 
 	<build>
